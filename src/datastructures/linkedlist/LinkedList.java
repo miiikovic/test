@@ -8,8 +8,16 @@ public class LinkedList {
 
 
 
-public void addFirst(E element) {
-    Node<E> newNode = new Node<>(element);
+
+
+
+public void clear() {
+    head = null;
+    tail = null;
+    size = 0;
+}
+
+
     newNode.next = head;
     head = newNode;
     if (tail == null) {

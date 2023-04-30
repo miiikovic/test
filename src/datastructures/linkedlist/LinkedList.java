@@ -9,30 +9,17 @@ public class LinkedList {
 
 
 
-
-
-
-
-public void add(int index, E element) {
-    if (index < 0 || index > size) {
-        throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-    }
-    Node<E> newNode = new Node<>(element);
-    if (index == 0) {
-        newNode.next = head;
-        head = newNode;
+    public void addLast(E element) {
+        Node<E> newNode = new Node<>(element);
         if (tail == null) {
-            tail = head;
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
         }
-    } else if (index == size) {
-        tail.next = newNode;
-        tail = newNode;
-    } else {
-        Node<E> prev = getNode(index - 1);
-        newNode.next = prev.next;
-        prev.next = newNode;
+        size++;
     }
-    size++;
 }
 
 

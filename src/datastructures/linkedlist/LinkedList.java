@@ -3,27 +3,20 @@ package datastructures.linkedlist;
 public class LinkedList {
 
 	
+    
 
 
 
 
-
-
-
-
-public void clear() {
-    head = null;
-    tail = null;
-    size = 0;
-}
-
-
-    newNode.next = head;
-    head = newNode;
-    if (tail == null) {
-        tail = head;
+public boolean contains(E element) {
+    Node<E> current = head;
+    while (current != null) {
+        if (current.element.equals(element)) {
+            return true;
+        }
+        current = current.next;
     }
-    size++;
+    return false;
 }
 
 

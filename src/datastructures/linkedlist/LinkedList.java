@@ -9,16 +9,24 @@ public class LinkedList {
 
 
 
-    public void addLast(E element) {
-        Node<E> newNode = new Node<>(element);
-        if (tail == null) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
+    
+
+
+
+
+    public E get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
-        size++;
+        return getNode(index).element;
+    }
+
+    private Node<E> getNode(int index) {
+        Node<E> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current;
     }
 }
 

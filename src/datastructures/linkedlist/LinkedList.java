@@ -14,15 +14,25 @@ public class LinkedList {
 
 
 
-    public E get(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-        }
-        return getNode(index).element;
-    }
+    
 
-    private Node<E> getNode(int index) {
+
+
+
+    public boolean contains(E element) {
         Node<E> current = head;
+        while (current != null) {
+            if (current.element.equals(element)) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+}
+
+
+
         for (int i = 0; i < index; i++) {
             current = current.next;
         }

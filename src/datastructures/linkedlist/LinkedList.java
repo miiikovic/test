@@ -19,9 +19,19 @@ public class LinkedList {
 
 
 
-    public boolean contains(E element) {
-        Node<E> current = head;
-        while (current != null) {
+    
+
+
+
+    public void clear() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+}
+
+
+ {
             if (current.element.equals(element)) {
                 return true;
             }

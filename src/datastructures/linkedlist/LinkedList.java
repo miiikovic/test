@@ -23,15 +23,14 @@ public class LinkedList {
 
 
 
-    public void clear() {
-        head = null;
-        tail = null;
-        size = 0;
-    }
-}
+    
 
 
- {
+
+
+    public boolean contains(E element) {
+        Node<E> current = head;
+        while (current != null) {
             if (current.element.equals(element)) {
                 return true;
             }
@@ -42,8 +41,7 @@ public class LinkedList {
 }
 
 
-
-        for (int i = 0; i < index; i++) {
+ i = 0; i < index; i++) {
             current = current.next;
         }
         return current;

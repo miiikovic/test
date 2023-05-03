@@ -28,20 +28,26 @@ public class LinkedList {
 
 
 
-    public boolean contains(E element) {
-        Node<E> current = head;
-        while (current != null) {
-            if (current.element.equals(element)) {
-                return true;
-            }
-            current = current.next;
+    
+
+
+
+    public void add(E element) {
+        Node<E> newNode = new Node<>(element);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
         }
-        return false;
+        size++;
     }
 }
 
 
- i = 0; i < index; i++) {
+
+i < index; i++) {
             current = current.next;
         }
         return current;

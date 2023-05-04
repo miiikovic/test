@@ -37,14 +37,24 @@ public class LinkedList {
 
 
 
-    public void addLast(E element) {
+    
+
+
+
+
+    public void addFirst(E element) {
         Node<E> newNode = new Node<>(element);
+        newNode.next = head;
+        head = newNode;
         if (tail == null) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
+            tail = head;
+        }
+        size++;
+    }
+}
+
+
+ newNode;
         }
         size++;
     }

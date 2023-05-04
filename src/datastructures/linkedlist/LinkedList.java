@@ -32,9 +32,14 @@ public class LinkedList {
 
 
 
-    public void add(E element) {
+    
+
+
+
+
+    public void addLast(E element) {
         Node<E> newNode = new Node<>(element);
-        if (head == null) {
+        if (tail == null) {
             head = newNode;
             tail = newNode;
         } else {
@@ -46,8 +51,7 @@ public class LinkedList {
 }
 
 
-
-i < index; i++) {
+++) {
             current = current.next;
         }
         return current;

@@ -3,55 +3,6 @@ package datastructures.linkedlist;
 public class LinkedList {
 
 	
-    
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-    
-
-
-
-
-    
-
-
-
-    
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-
     public E get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
@@ -68,17 +19,5 @@ public class LinkedList {
     }
 }
 
-
-size) {
-            tail.next = newNode;
-            tail = newNode;
-        } else {
-            Node<E> prev = getNode(index - 1);
-            newNode.next = prev.next;
-            prev.next = newNode;
-        }
-        size++;
-    }
-}
 
 

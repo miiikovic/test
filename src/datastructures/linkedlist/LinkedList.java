@@ -17,20 +17,19 @@ public class LinkedList {
 
 
 
-    public boolean contains(E element) {
-        Node<E> current = head;
-        while (current != null) {
-            if (current.element.equals(element)) {
-                return true;
-            }
-            current = current.next;
+    
+
+
+
+
+    public void add(int index, E element) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
-        return false;
-    }
-}
-
-
-     head = newNode;
+        Node<E> newNode = new Node<>(element);
+        if (index == 0) {
+            newNode.next = head;
+            head = newNode;
             if (tail == null) {
                 tail = head;
             }

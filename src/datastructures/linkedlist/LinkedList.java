@@ -41,12 +41,24 @@ public class LinkedList {
 
 
 
-    public void add(int index, E element) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-        }
+    
+
+
+
+
+    public void addFirst(E element) {
         Node<E> newNode = new Node<>(element);
-        if (index == 0) {
+        newNode.next = head;
+        head = newNode;
+        if (tail == null) {
+            tail = head;
+        }
+        size++;
+    }
+}
+
+
+  if (index == 0) {
             newNode.next = head;
             head = newNode;
             if (tail == null) {

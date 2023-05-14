@@ -46,26 +46,29 @@ public class LinkedList {
 
 
 
-    public void addFirst(E element) {
-        Node<E> newNode = new Node<>(element);
-        newNode.next = head;
-        head = newNode;
-        if (tail == null) {
-            tail = head;
+    
+
+
+
+
+    public E get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
-        size++;
+        return getNode(index).element;
+    }
+
+    private Node<E> getNode(int index) {
+        Node<E> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current;
     }
 }
 
 
-  if (index == 0) {
-            newNode.next = head;
-            head = newNode;
-            if (tail == null) {
-                tail = head;
-            }
-        } else if (index == size) {
-            tail.next = newNode;
+           tail.next = newNode;
             tail = newNode;
         } else {
             Node<E> prev = getNode(index - 1);

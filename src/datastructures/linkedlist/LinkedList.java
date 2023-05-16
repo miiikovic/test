@@ -51,14 +51,24 @@ public class LinkedList {
 
 
 
-    public E get(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-        }
-        return getNode(index).element;
-    }
+    
 
-    private Node<E> getNode(int index) {
+
+
+
+    public void addFirst(E element) {
+        Node<E> newNode = new Node<>(element);
+        newNode.next = head;
+        head = newNode;
+        if (tail == null) {
+            tail = head;
+        }
+        size++;
+    }
+}
+
+
+getNode(int index) {
         Node<E> current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;

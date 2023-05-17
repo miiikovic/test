@@ -61,15 +61,26 @@ public class LinkedList {
 
 
 
-    public E get(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-        }
-        return getNode(index).element;
-    }
+    
 
-    private Node<E> getNode(int index) {
-        Node<E> current = head;
+
+
+    public void add(E element) {
+        Node<E> newNode = new Node<>(element);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        size++;
+    }
+}
+
+
+
+;
         for (int i = 0; i < index; i++) {
             current = current.next;
         }

@@ -65,9 +65,19 @@ public class LinkedList {
 
 
 
-    public void add(E element) {
-        Node<E> newNode = new Node<>(element);
-        if (head == null) {
+    
+
+
+
+    public void clear() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
+}
+
+
+) {
             head = newNode;
             tail = newNode;
         } else {

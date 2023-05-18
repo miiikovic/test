@@ -69,29 +69,25 @@ public class LinkedList {
 
 
 
-    public void clear() {
-        head = null;
-        tail = null;
-        size = 0;
-    }
-}
+    
 
 
-) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
+
+
+    public boolean contains(E element) {
+        Node<E> current = head;
+        while (current != null) {
+            if (current.element.equals(element)) {
+                return true;
+            }
+            current = current.next;
         }
-        size++;
+        return false;
     }
 }
 
 
-
-;
-        for (int i = 0; i < index; i++) {
+t i = 0; i < index; i++) {
             current = current.next;
         }
         return current;

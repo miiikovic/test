@@ -78,34 +78,24 @@ public class LinkedList {
 
 
 
-    public void clear() {
-        head = null;
-        tail = null;
-        size = 0;
-    }
-}
+    
 
 
- {
-            if (current.element.equals(element)) {
-                return true;
+
+
+    public void add(int index, E element) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        Node<E> newNode = new Node<>(element);
+        if (index == 0) {
+            newNode.next = head;
+            head = newNode;
+            if (tail == null) {
+                tail = head;
             }
-            current = current.next;
-        }
-        return false;
-    }
-}
-
-
-t i = 0; i < index; i++) {
-            current = current.next;
-        }
-        return current;
-    }
-}
-
-
-xt = newNode;
+        } else if (index == size) {
+            tail.next = newNode;
             tail = newNode;
         } else {
             Node<E> prev = getNode(index - 1);

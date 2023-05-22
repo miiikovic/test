@@ -83,14 +83,26 @@ public class LinkedList {
 
 
 
-    public void add(int index, E element) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
-        }
+    
+
+
+
+
+    public void addLast(E element) {
         Node<E> newNode = new Node<>(element);
-        if (index == 0) {
-            newNode.next = head;
+        if (tail == null) {
             head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        size++;
+    }
+}
+
+
+          head = newNode;
             if (tail == null) {
                 tail = head;
             }

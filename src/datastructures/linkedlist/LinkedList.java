@@ -97,22 +97,25 @@ public class LinkedList {
 
 
 
-    public void add(E element) {
-        Node<E> newNode = new Node<>(element);
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
+    
+
+
+
+
+    public boolean contains(E element) {
+        Node<E> current = head;
+        while (current != null) {
+            if (current.element.equals(element)) {
+                return true;
+            }
+            current = current.next;
         }
-        size++;
+        return false;
     }
 }
 
 
-
- = newNode;
+e;
             if (tail == null) {
                 tail = head;
             }

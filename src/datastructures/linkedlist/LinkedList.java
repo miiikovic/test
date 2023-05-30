@@ -102,13 +102,24 @@ public class LinkedList {
 
 
 
-    public boolean contains(E element) {
-        Node<E> current = head;
-        while (current != null) {
-            if (current.element.equals(element)) {
-                return true;
-            }
-            current = current.next;
+    
+
+
+
+
+    public void addFirst(E element) {
+        Node<E> newNode = new Node<>(element);
+        newNode.next = head;
+        head = newNode;
+        if (tail == null) {
+            tail = head;
+        }
+        size++;
+    }
+}
+
+
+
         }
         return false;
     }

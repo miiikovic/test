@@ -107,12 +107,18 @@ public class LinkedList {
 
 
 
-    public void addFirst(E element) {
+    
+
+
+
+    public void add(E element) {
         Node<E> newNode = new Node<>(element);
-        newNode.next = head;
-        head = newNode;
-        if (tail == null) {
-            tail = head;
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
         }
         size++;
     }
@@ -120,14 +126,7 @@ public class LinkedList {
 
 
 
-        }
-        return false;
-    }
-}
-
-
-e;
-            if (tail == null) {
+ (tail == null) {
                 tail = head;
             }
         } else if (index == size) {

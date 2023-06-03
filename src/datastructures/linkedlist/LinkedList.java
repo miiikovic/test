@@ -111,14 +111,24 @@ public class LinkedList {
 
 
 
-    public void add(E element) {
+    
+
+
+
+
+    public void addFirst(E element) {
         Node<E> newNode = new Node<>(element);
-        if (head == null) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
+        newNode.next = head;
+        head = newNode;
+        if (tail == null) {
+            tail = head;
+        }
+        size++;
+    }
+}
+
+
+Node;
         }
         size++;
     }
